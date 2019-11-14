@@ -1,13 +1,20 @@
-module.exports = function(config) {
+module.exports = function (config) {
     config.set({
+        mochaOptions: { files: ['test/**/*.spec.ts'], opts: './test/mocha.opts', ui: 'bdd', require: ['ts-node/register', 'source-map-support/register'], asyncOnly: false, },
         mutator: "typescript",
         packageManager: "npm",
-        reporters: ["html", "clear-text", "progress"],
+        reporters: ["html", "clear-text", "progress", "dashboard"],
         testRunner: "mocha",
-        transpilers: ["typescript"],
+        transpilers: ["babel"],
         testFramework: "mocha",
-        coverageAnalysis: "perTest",
+        coverageAnalysis: "off",
         tsconfigFile: "tsconfig.json",
-        mutate: ["src/*.ts","src/**/*.ts"],
+        mutate: [
+            "!src/api.ts",
+            "!src/index.ts",
+            "src/**/*.ts"],
+        babel: {
+            optionsFile: ".babelrc",
+        },
     });
 };

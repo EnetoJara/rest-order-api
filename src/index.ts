@@ -6,3 +6,5 @@ import { Api } from "./api";
 const orderApiRest = new Api();
 
 orderApiRest.listen(3000, () => console.log("runnings"));
+
+export default orderApiRest;
