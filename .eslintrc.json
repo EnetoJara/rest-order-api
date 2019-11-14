@@ -1,0 +1,65 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "prettier",
+        "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "import",
+        "prettier"
+    ],
+    "env": {
+        "es6": true,
+        "browser": false,
+        "node": true,
+        "jest": false,
+        "mocha": true
+    },
+    "rules": {
+        "prettier/prettier": 0,
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"],
+        "@typescript-eslint/class-name-casing": 2,
+        "space-before-blocks": "error",
+        "space-before-function-paren": "error",
+        "no-unused-expressions": 2,
+        "prefer-destructuring": 2,
+        "consistent-return": 2,
+        "prefer-promise-reject-errors": 2,
+        "@typescript-eslint/no-explicit-any": 0,
+        "prefer-const": 2,
+        "block-scoped-var":"error",
+        "callback-return":"error"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "tsconfig.json",
+        "allowImportExportEverywhere": false,
+        "codeFrame": true,
+        "ecmaVersion": 9,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "impliedStrict": true,
+            "jsx": true
+        }
+    },
+    "settings": {
+        "polyfills": [
+            "promises"
+        ],
+        "import/resolver": {
+            "node": {
+                "paths": [
+                    "./src/*.ts",
+                    "./src/**/*.ts"
+                ],
+                "moduleDirectory": "node_modules"
+            }
+        }
+    }
+}
