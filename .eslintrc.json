@@ -22,19 +22,23 @@
     },
     "rules": {
         "prettier/prettier": 0,
-        "semi": ["error", "always"],
+        "semi": ["error", "never"],
         "quotes": ["error", "double"],
         "@typescript-eslint/class-name-casing": 2,
+        "@typescript-eslint/explicit-function-return-type": 0,
         "space-before-blocks": "error",
         "space-before-function-paren": "error",
+        "@typescript-eslint/no-misused-promises": 0,
         "no-unused-expressions": 2,
-        "prefer-destructuring": 2,
-        "consistent-return": 2,
+        "@typescript-eslint/no-unused-vars": 0,
+        "prefer-destructuring": 0,
+        "consistent-return": 0,
         "prefer-promise-reject-errors": 2,
         "@typescript-eslint/no-explicit-any": 0,
         "prefer-const": 2,
         "block-scoped-var":"error",
-        "callback-return":"error"
+        "callback-return":"error",
+        "@typescript-eslint/no-var-requires": 0
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -45,7 +49,7 @@
         "sourceType": "module",
         "ecmaFeatures": {
             "impliedStrict": true,
-            "jsx": true
+            "jsx": false
         }
     },
     "settings": {
@@ -56,7 +60,8 @@
             "node": {
                 "paths": [
                     "./src/*.ts",
-                    "./src/**/*.ts"
+                    "./src/**/*.ts",
+                    "./test**/*.spec.ts"
                 ],
                 "moduleDirectory": "node_modules"
             }

@@ -1,10 +1,11 @@
-import "core-js";
+import "@babel/register";
+import "core-js"
+import "@babel/runtime/regenerator"
 import "es6-promise/auto";
+import Api from "./api"
 
-import { Api } from "./api";
+const orderApiRest = new Api()
 
-const orderApiRest = new Api();
+orderApiRest.listen(3000, () => console.log("runnings"))
 
-orderApiRest.listen(3000, () => console.log("runnings"));
-
-export default orderApiRest;
+export default orderApiRest

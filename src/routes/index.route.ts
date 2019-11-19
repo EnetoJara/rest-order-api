@@ -1,9 +1,14 @@
-import { Request, Response, Router } from "express";
+import { formatOutPut } from "./../utils/order.api.response"
+import { getStatusText } from "http-status-codes"
+import { OK } from "http-status-codes"
+import { Request, Response, Router } from "express"
 
-const index = Router();
+const index = Router()
 
-index.route("").get((req: Request, res: Response) => {
-    res.status(200).send({ status: "success" });
-});
+index.route("/index").get((req: Request, res: Response) => {
+    res.status(OK).send(getStatusText(OK))
 
-export { index };
+    return formatOutPut(res, getStatusText(OK), OK)
+})
+
+export { index }
