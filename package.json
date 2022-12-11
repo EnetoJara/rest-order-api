@@ -32,7 +32,7 @@
     "cors": "2.8.5",
     "dotenv": "8.2.0",
     "es6-promise": "4.2.8",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "express-validator": "6.4.0",
     "express-winston": "4.0.3",
     "fbgraph": "1.4.4",
